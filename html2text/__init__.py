@@ -683,6 +683,7 @@ class HTML2Text(html.parser.HTMLParser):
                 if tag == "table":
                     if start:
                         self.table_start = True
+                        self.split_next_td = True
                         if self.pad_tables:
                             self.o("<" + config.TABLE_MARKER_FOR_PAD + ">")
                             self.o("  \n")
